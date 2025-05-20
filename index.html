@@ -5,27 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ольга — Парикмахер-Колорист</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>  
   <style>
     [data-lang] { display: none; }
     [data-lang].active { display: block; }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <header class="text-center p-6 bg-pink-50">
-    <h1 class="text-3xl font-bold">Olga Hair Studio</h1>
-    <div class="mt-4">
-      <button onclick="switchLang('ru')" class="px-3 py-1 mx-1 bg-pink-200 rounded">Рус</button>
-      <button onclick="switchLang('en')" class="px-3 py-1 mx-1 bg-pink-200 rounded">Eng</button>
-      <button onclick="switchLang('he')" class="px-3 py-1 mx-1 bg-pink-200 rounded">עב</button>
-    </div>
-  </header>
+  <div class="absolute top-4 right-4 z-10">
+	  <select id="languageSelect" class="bg-pink-200 px-3 py-1 rounded">
+		<option value="ru">Рус</option>
+		<option value="en">Eng</option>
+		<option value="he">עב</option>
+	  </select>
+  </div>
 
   <main class="max-w-4xl mx-auto p-6">
     <!-- Russian -->
     <section data-lang="ru" class="active">
       <h2 class="text-xl font-semibold">🌿 Профессиональный подход с любовью к своему делу</h2>
       <p class="mt-4">Привет! Меня зовут Ольга — я парикмахер-колорист из Москвы с опытом работы в салоне. Сейчас принимаю в уютной студии в Израиле.</p>
-      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <img src="./images/olga.jpg" class="rounded-lg shadow-md w-full max-w-xs mx-auto" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
       <h3 class="text-lg font-semibold mt-6">✨ Что я делаю:</h3>
       <ul class="list-disc list-inside">
         <li>Женские стрижки</li>
@@ -42,7 +45,7 @@
     <section data-lang="en">
       <h2 class="text-xl font-semibold">🌿 Professional care with love for what I do</h2>
       <p class="mt-4">Hi! I’m Olga — a hairdresser and colorist from Moscow with salon experience. I now work in a cozy studio in Israel.</p>
-      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <img src="./images/olga.jpg" class="rounded-lg shadow-md w-full max-w-xs mx-auto" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
       <h3 class="text-lg font-semibold mt-6">✨ Services:</h3>
       <ul class="list-disc list-inside">
         <li>Women’s haircuts</li>
@@ -56,10 +59,10 @@
     </section>
 
     <!-- Hebrew -->
-    <section data-lang="he" dir="rtl">
+    <section data-lang="he" dir="rtl" class="text-right">
       <h2 class="text-xl font-semibold">🌿 גישה מקצועית עם אהבה למקצוע</h2>
       <p class="mt-4">שלום! אני אולגה — ספרית וצבעית ממוסקבה עם ניסיון בסלון. כיום אני מקבלת בסטודיו נעים בישראל.</p>
-      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <img src="./images/olga.jpg" class="rounded-lg shadow-md w-full max-w-xs mx-auto" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
       <h3 class="text-lg font-semibold mt-6">✨ שירותים:</h3>
       <ul class="list-disc list-inside">
         <li>תספורות נשים מודרניות</li>
@@ -72,21 +75,75 @@
       <h3 class="text-lg font-semibold mt-8">📷 גלריית עבודות</h3>
     </section>
 
-	<div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-      <img src="./images/01.jpg" width="300px" alt="Окрашивание 1" class="rounded-lg shadow-md" />
-      <img src="./images/02.jpg" width="300px" alt="Окрашивание 2" class="rounded-lg shadow-md" />
-      <img src="./images/03.jpg" width="300px" alt="Окрашивание 3" class="rounded-lg shadow-md" />
-      <img src="./images/04.jpg" width="300px" alt="Окрашивание 4" class="rounded-lg shadow-md" />
+	<!-- Swiper -->
+	<div class="swiper mySwiper mt-6">
+	  <div class="swiper-wrapper">
+		<div class="swiper-slide"><img src="./images/01.jpg" class="rounded-lg shadow-md" alt="Окрашивание 1"></div>
+		<div class="swiper-slide"><img src="./images/02.jpg" class="rounded-lg shadow-md" alt="Окрашивание 2"></div>
+		<div class="swiper-slide"><img src="./images/03.jpg" class="rounded-lg shadow-md" alt="Окрашивание 3"></div>
+		<div class="swiper-slide"><img src="./images/04.jpg" class="rounded-lg shadow-md" alt="Окрашивание 4"></div>
+		<!-- Добавь сколько хочешь -->
+	  </div>
+
+	  <!-- Навигация (опционально) -->
+	  <div class="swiper-pagination"></div>
+	  <div class="swiper-button-prev"></div>
+	  <div class="swiper-button-next"></div>
 	</div>
   </main>
 
   <script>
-    function switchLang(lang) {
-      document.querySelectorAll('[data-lang]').forEach(el => {
-        el.classList.remove('active');
-      });
-      document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+function switchLang(lang) {
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.remove('active');
+    });
+    const activeSection = document.querySelector(`[data-lang="${lang}"]`);
+    if (activeSection) {
+      activeSection.classList.add('active');
     }
+
+    // Обновим <select> при переключении
+    const selector = document.getElementById('languageSelect');
+    if (selector && selector.value !== lang) {
+      selector.value = lang;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem('lang') || 'ru';
+    switchLang(savedLang);
+
+    const selector = document.getElementById('languageSelect');
+    if (selector) {
+      selector.value = savedLang;
+      selector.addEventListener('change', (e) => {
+        switchLang(e.target.value);
+      });
+    }
+  });
+  
+	document.addEventListener("DOMContentLoaded", () => {
+	  // ... switchLang часть оставляем как есть ...
+
+	  new Swiper(".mySwiper", {
+		loop: true,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+		  el: ".swiper-pagination",
+		  clickable: true,
+		},
+		navigation: {
+		  nextEl: ".swiper-button-next",
+		  prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+		  640: { slidesPerView: 2 },
+		  1024: { slidesPerView: 3 },
+		},
+	  });
+	});  
   </script>
 </body>
 </html>
