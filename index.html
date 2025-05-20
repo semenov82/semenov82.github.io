@@ -5,56 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ольга — Парикмахер-Колорист</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+  </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-
   <header class="text-center p-6 bg-pink-50">
-    <h1 class="text-3xl font-bold">СТРИЖКИ • ОКРАШИВАНИЕ • УХОД</h1>
-    <p class="mt-2 text-lg">🌿 Профессиональный подход с любовью к своему делу</p>
+    <h1 class="text-3xl font-bold">Olga Hair Studio</h1>
+    <div class="mt-4">
+      <button onclick="switchLang('ru')" class="px-3 py-1 mx-1 bg-pink-200 rounded">Рус</button>
+      <button onclick="switchLang('en')" class="px-3 py-1 mx-1 bg-pink-200 rounded">Eng</button>
+      <button onclick="switchLang('he')" class="px-3 py-1 mx-1 bg-pink-200 rounded">עב</button>
+    </div>
   </header>
 
-  <section class="max-w-3xl mx-auto p-6">
-    <p class="mb-4">
-      Привет! Меня зовут Ольга — я парикмахер-колорист из Москвы с опытом работы в салоне. Уже почти три года живу в Израиле и принимаю в уютной студии, где царит комфорт и внимание к каждому клиенту.
-    </p>
-    <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+  <main class="max-w-4xl mx-auto p-6">
+    <!-- Russian -->
+    <section data-lang="ru" class="active">
+      <h2 class="text-xl font-semibold">🌿 Профессиональный подход с любовью к своему делу</h2>
+      <p class="mt-4">Привет! Меня зовут Ольга — я парикмахер-колорист из Москвы с опытом работы в салоне. Сейчас принимаю в уютной студии в Израиле.</p>
+      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <h3 class="text-lg font-semibold mt-6">✨ Что я делаю:</h3>
+      <ul class="list-disc list-inside">
+        <li>Женские стрижки</li>
+        <li>Окрашивание: блонд, балаяж, шатуш и др.</li>
+        <li>Уход и восстановление</li>
+        <li>Биозавивка</li>
+      </ul>
+      <p class="mt-4">📞 053-9638817 <a href="https://wa.me/972539638817">WhatsApp</a> / <a href="https://t.me/ollietouch">Telegram</a></p>
+      <p>📸 Instagram: <a href="https://www.instagram.com/ollietouch">@ollietouch</a></p>
+    </section>
 
-    <h2 class="text-xl font-semibold mb-2">✨ Что я делаю:</h2>
-    <ul class="list-disc list-inside mb-4">
-      <li>Современные женские стрижки</li>
-      <li>Окрашивания любой сложности (блонды, балаяж, шатуш и др.)</li>
-      <li>Уходы и восстановление волос</li>
-      <li>Биозавивка</li>
-    </ul>
+    <!-- English -->
+    <section data-lang="en">
+      <h2 class="text-xl font-semibold">🌿 Professional care with love for what I do</h2>
+      <p class="mt-4">Hi! I’m Olga — a hairdresser and colorist from Moscow with salon experience. I now work in a cozy studio in Israel.</p>
+      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <h3 class="text-lg font-semibold mt-6">✨ Services:</h3>
+      <ul class="list-disc list-inside">
+        <li>Women’s haircuts</li>
+        <li>Hair coloring: blonde, balayage, shatush, and more</li>
+        <li>Hair treatment and recovery</li>
+        <li>Bio curling</li>
+      </ul>
+      <p class="mt-4">📞 053-9638817 <a href="https://wa.me/972539638817">WhatsApp</a> / <a href="https://t.me/ollietouch">Telegram</a></p>
+      <p>📸 Instagram: <a href="https://www.instagram.com/ollietouch">@ollietouch</a></p>
+    </section>
 
-    <p class="mb-6">
-      Работаю на высококачественной профессиональной косметике. Индивидуально подбираю технику и оттенки под ваш тип внешности и стиль.
-    </p>
+    <!-- Hebrew -->
+    <section data-lang="he" dir="rtl">
+      <h2 class="text-xl font-semibold">🌿 גישה מקצועית עם אהבה למקצוע</h2>
+      <p class="mt-4">שלום! אני אולגה — ספרית וצבעית ממוסקבה עם ניסיון בסלון. כיום אני מקבלת בסטודיו נעים בישראל.</p>
+      <img src="./images/olga.jpg" width="300px" alt="Olga Pivovarova" class="rounded-lg shadow-md" />
+      <h3 class="text-lg font-semibold mt-6">✨ שירותים:</h3>
+      <ul class="list-disc list-inside">
+        <li>תספורות נשים מודרניות</li>
+        <li>צביעה: בלונד, בליאז', שאטוש ועוד</li>
+        <li>טיפולים ושיקום שיער</li>
+        <li>ביוסלסול</li>
+      </ul>
+      <p class="mt-4">📞 053-9638817 <a href="https://wa.me/972539638817">WhatsApp</a> / <a href="https://t.me/ollietouch">Telegram</a></p>
+      <p>📸 אינסטגרם: <a href="https://www.instagram.com/ollietouch">@ollietouch</a></p>
+    </section>
+	
+    <section class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="./images/01.jpg" width="300px" alt="Окрашивание 1" class="rounded-lg shadow-md" />
+      <img src="./images/02.jpg" width="300px" alt="Окрашивание 2" class="rounded-lg shadow-md" />
+      <img src="./images/03.jpg" width="300px" alt="Окрашивание 3" class="rounded-lg shadow-md" />
+      <img src="./images/04.jpg" width="300px" alt="Окрашивание 4" class="rounded-lg shadow-md" />
+    </section>	
+  </main>
 
-    <div class="bg-pink-100 p-4 rounded-lg mb-6">
-      <h3 class="text-lg font-semibold">📍 Студия с домашней атмосферой</h3>
-      <p>📞 Запись по телефону: <a class="text-pink-600 font-semibold" href="tel:+972539638817">053-9638817</a></p>
-      <p>📱 <a class="text-blue-600 underline" href="https://wa.me/972539638817">WhatsApp</a> / <a class="text-blue-600 underline" href="https://t.me/ollietouch">Telegram</a></p>
-    </div>
-
-    <div class="mb-6">
-      <h3 class="text-lg font-semibold">📸 Портфолио и отзывы:</h3>
-      <p>
-        Instagram: <a class="text-pink-600 underline" href="https://www.instagram.com/ollietouch">@ollietouch</a>
-      </p>
-    </div>
-
-    <p class="text-xl text-center font-medium mt-8">💬 Напиши — и мы подберём образ, в который ты влюбишься!</p>
-  </section>
-
-  <!-- Здесь можно вставить слайдер или галерею с фото -->
-  <section class="max-w-5xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-4">
-    <!-- Примеры -->
-    <img src="./images/01.jpg" width="300px" alt="Окрашивание 1" class="rounded-lg shadow-md" />
-    <img src="./images/02.jpg" width="300px" alt="Окрашивание 2" class="rounded-lg shadow-md" />
-    <img src="./images/03.jpg" width="300px" alt="Окрашивание 3" class="rounded-lg shadow-md" />
-    <img src="./images/04.jpg" width="300px" alt="Окрашивание 4" class="rounded-lg shadow-md" />
-  </section>
-
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active');
+      });
+      document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+    }
+  </script>
 </body>
 </html>
