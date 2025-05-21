@@ -21,9 +21,6 @@
   <meta property="og:image" content="https://semenov82.github.io/images/cover.jpg" />
   <meta property="og:url" content="https://semenov82.github.io/" />
   <meta property="og:type" content="website" />
-  <link rel="alternate" hreflang="ru" href="https://semenov82.github.io/" />
-  <link rel="alternate" hreflang="en" href="https://semenov82.github.io/?lang=en" />
-  <link rel="alternate" hreflang="he" href="https://semenov82.github.io/?lang=he" />
   
   <link rel="icon" href="images/favicon16.png" type="image/png">
   <link rel="apple-touch-icon" href="images/icon_apple.png">
@@ -133,11 +130,11 @@
   </main>
 
   <script>
-function switchLang(lang) {
-    localStorage.setItem('lang', lang);
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.classList.remove('active');
-    });
+  function switchLang(lang) {
+      localStorage.setItem('lang', lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.remove('active');
+      });
     const activeSection = document.querySelector(`[data-lang="${lang}"]`);
     if (activeSection) {
       activeSection.classList.add('active');
